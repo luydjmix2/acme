@@ -22,7 +22,7 @@
     <div class="bg-header-dark">
         <div class="content-header bg-white-10">
             <!-- Logo -->
-            <a class="font-w600 text-white tracking-wide" href="{{route('admin.home')}}">
+            <a class="font-w600 text-white tracking-wide" href="{{route('home')}}">
                 <span class="smini-visible">
                     Crm<span class="opacity-75">N360°</span>
                 </span>

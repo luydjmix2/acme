@@ -15,6 +15,13 @@ class CreateConductorsTable extends Migration
     {
         Schema::create('conductors', function (Blueprint $table) {
             $table->id();
+            $table->string('documento');
+            $table->string('pri_nombre');
+            $table->string('seg_nombre');
+            $table->string('apellidos');
+            $table->string('direcion');
+            $table->string('telefono');
+            $table->string('ciudad');
             $table->timestamps();
         });
     }

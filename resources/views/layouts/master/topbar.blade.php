@@ -34,10 +34,10 @@
         </button>
         <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
             <div class="bg-primary rounded-top font-w600 text-white text-center p-3">
-                User Options
+                Opciones
             </div>
             <div class="p-2">
-                <a class="dropdown-item" href="be_pages_generic_profile.html">
+<!--                <a class="dropdown-item" href="be_pages_generic_profile.html">
                     <i class="far fa-fw fa-user mr-1"></i> Profile
                 </a>
                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
@@ -47,16 +47,16 @@
                 <a class="dropdown-item" href="be_pages_generic_invoice.html">
                     <i class="far fa-fw fa-file-alt mr-1"></i> Invoices
                 </a>
-                <div role="separator" class="dropdown-divider"></div>
+                <div role="separator" class="dropdown-divider"></div>-->
 
                 <!-- Toggle Side Overlay -->
                 <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
+<!--                <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
                     <i class="far fa-fw fa-building mr-1"></i> Settings
-                </a>
+                </a>-->
                 <!-- END Side Overlay -->
 
-                <div role="separator" class="dropdown-divider"></div>
+                <!--<div role="separator" class="dropdown-divider"></div>-->
                 <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))
@@ -83,10 +83,10 @@
 
     <!-- Notifications Dropdown -->
     <div class="dropdown d-inline-block">
-        <button type="button" class="btn btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<!--        <button type="button" class="btn btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
             <span class="badge badge-secondary badge-pill">5</span>
-        </button>
+        </button>-->
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
             <div class="bg-primary rounded-top font-w600 text-white text-center p-3">
                 Notifications
@@ -159,9 +159,9 @@
 
     <!-- Toggle Side Overlay -->
     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-    <button type="button" class="btn btn-dual" data-toggle="layout" data-action="side_overlay_toggle">
+<!--    <button type="button" class="btn btn-dual" data-toggle="layout" data-action="side_overlay_toggle">
         <i class="far fa-fw fa-list-alt"></i>
-    </button>
+    </button>-->
     <!-- END Toggle Side Overlay -->
 </div>
 <!-- END Right Section -->

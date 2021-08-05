@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Conductor;
 
 class ConductorSeeder extends Seeder
 {
@@ -13,6 +14,14 @@ class ConductorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Conductor::create([
+            'documento' => '12345678901',
+            'pri_nombre' => 'diego',
+            'seg_nombre' => 'andres',
+            'apellidos' => 'gil palma',
+            'direcion' => 'calle sur norte',
+            'telefono' => '8888888',
+            'ciudad' => 'Muy muy lejano',
+        ]);
     }
 }

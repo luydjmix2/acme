@@ -21,8 +21,6 @@ class UserSeeder extends Seeder {
             'password' => Hash::make('123456789'),
             'created_at' => now(),
         ]);
-
-        User::factory(10)->create();
     }
 
 }
