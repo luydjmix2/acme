@@ -1,3 +1,18 @@
+
+## Prueba Acme
+
+para instalar el proyecto debe cargar los archivos faltantes que por seguridad no carga git, despues de tener el proyecto dentro de su area de proyectos
+
+simplemente debe ejecutar el comando de para ejecutar em migrate con los seeders para ejecutar y poner el proyecto en marca
+
+si tiene algun problema recuerde actualizar el archivo config.php con el comando artisan para borrar cookies
+
+si persiste contacte con el creador del repositorio.
+
+gracias
+
+## Indicaciones tecnicas la prueba
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
