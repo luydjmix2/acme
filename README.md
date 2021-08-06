@@ -1,11 +1,9 @@
 
 ## Prueba Acme
 
-para instalar el proyecto debe cargar los archivos faltantes que por seguridad no carga git, despues de tener el proyecto dentro de su area de proyectos
+Para instalar el proyecto debe cargar los archivos faltantes que por seguridad no carga git, despues de tener el proyecto dentro de su area de proyectos simplemente debe ejecutar el comando de para ejecutar em migrate con los seeders para ejecutar y poner el proyecto en marca.
 
-simplemente debe ejecutar el comando de para ejecutar em migrate con los seeders para ejecutar y poner el proyecto en marca
-
-si tiene algun problema recuerde actualizar el archivo config.php con el comando artisan para borrar cookies
+si tiene algun problema recuerde actualizar el archivo config.php con el comando artisan para borrar cookies.
 
 si persiste contacte con el creador del repositorio.
 
