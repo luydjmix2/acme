@@ -32,14 +32,29 @@
     <!-- Dynamic Table with Export Buttons -->
     <div class="block block-rounded">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Dynamic Table <small>Export Buttons</small></h3>
+            <h3 class="block-title">Listado <small>@lang('propietario.names')</small></h3>
         </div>
         <div class="block-content block-content-full">
+            @if(Session::has('alertOk'))
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{Session::get('alertOk')}}
+            </div>
+            @endif
             <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
             <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                @if ($errors->any())
+                <div class="alert alert-danger alert-dismissable">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="row">
-                    <div class="col-xl-2">
-                        <button type="button" class="btn btn-primary push" data-toggle="modal" data-target="#modal-block-popin">Block Design</button>
+                    <div class="col-xl-3">
+                        <button type="button" class="btn btn-primary push" data-toggle="modal" data-target="#modal-block-popin">Crear {{trans('propietario.name')}}</button>
                     </div>
                 </div>
                 <div class="row">

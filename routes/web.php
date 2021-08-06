@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropietarioController;
+use App\Http\Controllers\ConductorController;
+use App\Http\Controllers\VehiculoController;
 
 /*
   |--------------------------------------------------------------------------
@@ -23,8 +25,17 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/propietario', PropietarioController::class, ['names' => 'propietario', 'only' => [
-        'index', 'store', 'update' , 'destroy'
-]]);
+        'index', 'store'
+], ]);
+
+
+Route::resource('/conductor', ConductorController::class, ['names' => 'conductor', 'only' => [
+        'index', 'store'
+], ]);
+
+Route::resource('/vehiculo', VehiculoController::class, ['names' => 'vehiculo', 'only' => [
+        'index', 'store'
+], ]);
 
 //comandos por browser
 //limpiar cache

@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Propietario;
+use App\Http\Requests\PropieStoreRequest;
 
-class PropietarioController extends Controller
-{
+class PropietarioController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $propietarios = Propietario::all();
         return view('admin.propietario.index', compact('propietarios'));
     }
@@ -23,8 +23,7 @@ class PropietarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -34,9 +33,18 @@ class PropietarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(PropieStoreRequest $request) {
+
+        Propietario::updateOrCreate(['documento' => $request->document], [
+            'pri_nombre' => $request->fName,
+            'seg_nombre' => $request->sName,
+            'apellidos' => $request->lNames,
+            'direcion' => $request->dir,
+            'telefono' => $request->phone,
+            'ciudad' => $request->city,
+        ]);
+        
+        return back()->with('alertOk', 'Se regitro corectamente el propietario '.$request->fName.' '.$request->lNames.'.');
     }
 
     /**
@@ -45,8 +53,7 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -56,8 +63,7 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -68,8 +74,7 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -79,8 +84,8 @@ class PropietarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
