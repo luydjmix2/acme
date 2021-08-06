@@ -19,4 +19,14 @@
             <span class="nav-main-link-name">Propietarios</span>
         </a>
     </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{route('conductor.index')}}">
+            <span class="nav-main-link-name">Conductores</span>
+        </a>
+    </li>
+    <li class="nav-main-item">
+        <a class="nav-main-link" href="{{route('vehiculo.index')}}">
+            <span class="nav-main-link-name">Vehiculos</span>
+        </a>
+    </li>
 </ul>

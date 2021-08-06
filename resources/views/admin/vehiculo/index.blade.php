@@ -16,7 +16,7 @@
     <div class="d-md-flex justify-content-md-between align-items-md-center py-3 pt-md-3 pb-md-0 text-center text-md-left">
         <div>
             <h1 class="h2 mb-1">
-                Propietarios
+                Vehiculos
             </h1>
         </div>
         <div class="mt-4 mt-md-0">
@@ -32,7 +32,7 @@
     <!-- Dynamic Table with Export Buttons -->
     <div class="block block-rounded">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Listado <small>@lang('propietario.names')</small></h3>
+            <h3 class="block-title">Listado <small>Vehiculos</small></h3>
         </div>
         <div class="block-content block-content-full">
             @if(Session::has('alertOk'))
@@ -54,7 +54,7 @@
                 @endif
                 <div class="row">
                     <div class="col-xl-3">
-                        <button type="button" class="btn btn-primary push" data-toggle="modal" data-target="#modal-block-popin">Crear {{trans('propietario.name')}}</button>
+                        <button type="button" class="btn btn-primary push" data-toggle="modal" data-target="#modal-block-popin">Crear Vehiculo</button>
                     </div>
                 </div>
                 <div class="row">
@@ -63,35 +63,35 @@
                             <thead>
                                 <tr role="row">
                                     <th class="text-center sorting_asc" style="width: 80px;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending">Nombre</th>
-                                    <th class="d-none d-sm-table-cell sorting" style="width: 30%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Documento: activate to sort column ascending">Documento</th>
-                                    <th class="d-none d-sm-table-cell sorting" style="width: 15%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Direccion: activate to sort column ascending">Direccion</th>
-                                    <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Telefono: activate to sort column ascending">Telefono</th>
-                                    <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Ciudad: activate to sort column ascending">Ciudad</th>
-                                    <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Acciones: activate to sort column ascending">Accriones</th>
+                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending">Placa</th>
+                                    <th class="d-none d-sm-table-cell sorting" style="width: 10%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Documento: activate to sort column ascending">Color</th>
+                                    <th class="d-none d-sm-table-cell sorting" style="width: 10%;" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Direccion: activate to sort column ascending">Marca</th>
+                                    <th style="width: 15%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Telefono: activate to sort column ascending">Tipo</th>
+                                    <th style="width: 30%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Ciudad: activate to sort column ascending">Propietario</th>
+                                    <th style="width: 30%;" class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Acciones: activate to sort column ascending">Conductos</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($propietarios as $item)
+                                @foreach($vehiculos as $item)
                                 <tr >
                                     <td class="text-center sorting_1">{{$item->id}}</td>
                                     <td class="font-w600">
-                                        {{$item->pri_nombre}} {{$item->seg_nombre}} {{$item->apellidos}}
+                                        {{$item->placa}} 
                                     </td>
                                     <td class="d-none d-sm-table-cell">
-                                        {{$item->documento}}
+                                        {{$item->color}}
                                     </td>
                                     <td class="d-none d-sm-table-cell">
-                                        {{$item->direcion}}
+                                        {{$item->marca}}
                                     </td>
                                     <td class="d-none d-sm-table-cell">
-                                        {{$item->telefono}}
+                                        {{Helper::typeCar($item->tipo)}}
                                     </td>
                                     <td class="d-none d-sm-table-cell">
-                                        {{$item->ciudad}}
+                                        {{Helper::getDataPropie($item->propietario_id)->pri_nombre}} {{Helper::getDataPropie($item->propietario_id)->seg_nombre}} {{Helper::getDataPropie($item->propietario_id)->apellidos}}
                                     </td>
                                     <td>
-
+                                        {{Helper::getDataConduc($item->conductor_id)->pri_nombre}} {{Helper::getDataConduc($item->conductor_id)->seg_nombre}} {{Helper::getDataConduc($item->conductor_id)->apellidos}}
                                     </td>
                                 </tr>
 
@@ -109,7 +109,7 @@
 
 </div>
 <!-- END Page Content -->
-@component('component.propietario.modalCrear')
+@component('component.vehiculo.modalCrear')
 @slot('propietario_id') {{$item->id}} @endslot
 @endcomponent
 

@@ -16,7 +16,7 @@
     <div class="d-md-flex justify-content-md-between align-items-md-center py-3 pt-md-3 pb-md-0 text-center text-md-left">
         <div>
             <h1 class="h2 mb-1">
-                Propietarios
+                Conductores
             </h1>
         </div>
         <div class="mt-4 mt-md-0">
@@ -32,7 +32,7 @@
     <!-- Dynamic Table with Export Buttons -->
     <div class="block block-rounded">
         <div class="block-header block-header-default">
-            <h3 class="block-title">Listado <small>@lang('propietario.names')</small></h3>
+            <h3 class="block-title">Listado <small>Conductores</small></h3>
         </div>
         <div class="block-content block-content-full">
             @if(Session::has('alertOk'))
@@ -72,7 +72,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($propietarios as $item)
+                                @foreach($conductores as $item)
                                 <tr >
                                     <td class="text-center sorting_1">{{$item->id}}</td>
                                     <td class="font-w600">
@@ -109,7 +109,7 @@
 
 </div>
 <!-- END Page Content -->
-@component('component.propietario.modalCrear')
+@component('component.conductor.modalCrear')
 @slot('propietario_id') {{$item->id}} @endslot
 @endcomponent
 
