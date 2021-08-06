@@ -7,7 +7,7 @@ si tiene algun problema recuerde actualizar el archivo config.php con el comando
 
 si persiste contacte con el creador del repositorio.
 
-gracias
+gracias.
 
 ## Indicaciones tecnicas de la prueba
 
